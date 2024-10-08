@@ -1,29 +1,36 @@
 import Link from './Link'
-import siteMetadata from '@/data/siteMetadata'
-import SocialIcon from '@/components/social-icons'
+import { ContainerInner, ContainerOuter } from '@/components/Container'
+import headerNavLinks from '@/data/headerNavLinks'
+
+function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <Link href={href} className="transition hover:text-pink-500 dark:hover:text-pink-400">
+      {children}
+    </Link>
+  )
+}
 
 export default function Footer() {
   return (
-    <footer>
-      <div className="mt-16 flex flex-col items-center">
-        <div className="mb-3 flex space-x-4">
-          <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} size={6} />
-          <SocialIcon kind="github" href={siteMetadata.github} size={6} />
-          {/* <SocialIcon kind="facebook" href={siteMetadata.facebook} size={6} /> */}
-          {/* <SocialIcon kind="youtube" href={siteMetadata.youtube} size={6} /> */}
-          <SocialIcon kind="linkedin" href={siteMetadata.linkedin} size={6} />
-          <SocialIcon kind="x" href={siteMetadata.x} size={6} />
-          {/* <SocialIcon kind="instagram" href={siteMetadata.instagram} size={6} /> */}
-          {/* <SocialIcon kind="threads" href={siteMetadata.threads} size={6} /> */}
+    <footer className="mt-32 flex-none">
+      <ContainerOuter>
+        <div className="border-t border-zinc-100 pb-16 pt-10 dark:border-zinc-700/40">
+          <ContainerInner>
+            <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
+              <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200">
+                {headerNavLinks.map((link) => (
+                  <NavLink key={link.href} href={link.href}>
+                    {link.title}
+                  </NavLink>
+                ))}
+              </div>
+              <p className="text-sm text-zinc-400 dark:text-zinc-500">
+                &copy; {new Date().getFullYear()} Bora Lee. All rights reserved.
+              </p>
+            </div>
+          </ContainerInner>
         </div>
-        <div className="mb-2 flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
-          <div>{siteMetadata.author}</div>
-          <div>{` • `}</div>
-          <div>{`© ${new Date().getFullYear()}`}</div>
-          <div>{` • `}</div>
-          <Link href="/">{siteMetadata.title}</Link>
-        </div>
-      </div>
+      </ContainerOuter>
     </footer>
   )
 }
