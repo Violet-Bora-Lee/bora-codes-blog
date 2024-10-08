@@ -4,7 +4,7 @@ import 'remark-github-blockquote-alert/alert.css'
 
 import { Space_Grotesk } from 'next/font/google'
 import Header from '@/components/Header'
-import SectionContainer from '@/components/SectionContainer'
+import SectionContainer from '@/components/Layout'
 import Footer from '@/components/Footer'
 import siteMetadata from '@/data/siteMetadata'
 import { Metadata } from 'next'
@@ -62,7 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang={siteMetadata.language}
-      className={`${space_grotesk.variable} scroll-smooth`}
+      className={`${space_grotesk.variable} h-full scroll-smooth antialiased`}
       suppressHydrationWarning
     >
       <link
@@ -92,13 +92,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
       <link rel="alternate" type="application/rss+xml" href={`${basePath}/feed.xml`} />
-      <body className="bg-white pl-[calc(100vw-100%)] text-black antialiased dark:bg-gray-950 dark:text-white">
+      <body className="flex h-full bg-zinc-50 text-black antialiased dark:bg-black dark:text-white">
         <Providers>
-          <SectionContainer>
-            <Header />
-            <main className="mb-auto">{children}</main>
-            <Footer />
-          </SectionContainer>
+          <div className="flex w-full">
+            <SectionContainer>
+              <main className="mb-auto">{children}</main>
+            </SectionContainer>
+          </div>
         </Providers>
       </body>
     </html>
