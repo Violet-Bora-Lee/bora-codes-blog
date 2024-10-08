@@ -122,7 +122,7 @@ function MobileNavigation(props: React.ComponentPropsWithoutRef<typeof Popover>)
 }
 
 function NavItem({ href, children }: { href: string; children: React.ReactNode }) {
-  const isActive = usePathname() === href
+  const isActive = usePathname().startsWith(href)
 
   return (
     <li>
