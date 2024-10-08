@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { useRouter } from 'next/navigation'
 import { formatDate } from 'pliny/utils/formatDate'
 import { CoreContent } from 'pliny/utils/contentlayer'
 import type { Blog } from 'contentlayer/generated'
@@ -8,6 +9,7 @@ import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/Layout'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
+import { Container } from '@/components/Container'
 
 interface LayoutProps {
   content: CoreContent<Blog>
@@ -18,13 +20,12 @@ interface LayoutProps {
 
 export default function PostLayout({ content, next, prev, children }: LayoutProps) {
   const { path, slug, date, title } = content
-
   return (
-    <SectionContainer>
+    <Container>
       <ScrollTopAndComment />
       <article>
         <div>
-          <header>
+          <header className="mt-16 lg:mt-32 xl:pb-16">
             <div className="space-y-1 border-b border-gray-200 pb-10 text-center dark:border-gray-700">
               <dl>
                 <div>
@@ -77,6 +78,6 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
           </div>
         </div>
       </article>
-    </SectionContainer>
+    </Container>
   )
 }

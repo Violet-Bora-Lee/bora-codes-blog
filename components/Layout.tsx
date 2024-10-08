@@ -16,10 +16,9 @@ export default function SectionContainer({ children }: Props) {
       </div>
       <div className="relative flex w-full flex-col">
         <Header />
-        <main className="flex-auto">{children}</main>
+        <div className="flex-auto">{children}</div>
         <Footer />
       </div>
     </>
-    // <section className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">{children}</section>
   )
 }

@@ -7,6 +7,7 @@ import tagData from 'app/tag-data.json'
 import { genPageMetadata } from 'app/seo'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import { Container } from '@/components/Container'
 
 export async function generateMetadata({ params }: { params: { tag: string } }): Promise<Metadata> {
   const tag = decodeURI(params.tag)
@@ -41,5 +42,9 @@ export default function TagPage({ params }: { params: { tag: string } }) {
   if (filteredPosts.length === 0) {
     return notFound()
   }
-  return <ListLayout posts={filteredPosts} title={title} />
+  return (
+    <Container>
+      <ListLayout posts={filteredPosts} title={title} />
+    </Container>
+  )
 }

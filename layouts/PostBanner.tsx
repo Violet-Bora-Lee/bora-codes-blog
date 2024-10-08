@@ -9,6 +9,7 @@ import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/Layout'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
+import { Container } from '@/components/Container'
 
 interface LayoutProps {
   content: CoreContent<Blog>
@@ -23,7 +24,7 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
     images && images.length > 0 ? images[0] : 'https://picsum.photos/seed/picsum/800/400'
 
   return (
-    <SectionContainer>
+    <Container>
       <ScrollTopAndComment />
       <article>
         <div>
@@ -73,6 +74,6 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
           </footer>
         </div>
       </article>
-    </SectionContainer>
+    </Container>
   )
 }
