@@ -25,7 +25,8 @@ const projectsData: Project[] = [
   },
   {
     title: 'Stargaze NFT Marketplace',
-    description: 'Fully responsible for all wallet-related tasks, including integrating MetaMask Snap for Cosmos projects. Developed and maintained the GraphQL resolver and client using a Rust-based indexer, and managed frontend tasks.',
+    description:
+      'Fully responsible for all wallet-related tasks, including integrating MetaMask Snap for Cosmos projects. Developed and maintained the GraphQL resolver and client using a Rust-based indexer, and managed frontend tasks.',
     link: { href: 'https://www.stargaze.zone/', label: 'www.stargaze.zone' },
     // TODO: add logo
   },
