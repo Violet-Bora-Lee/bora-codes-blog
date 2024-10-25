@@ -45,7 +45,7 @@ const projectsData: Project[] = [
   {
     title: 'Musinsa',
     description:
-      'Developed and maintained a project to integrate GNB, LNB, and FNB source codes from multiple repositories into a single repository for better management, deploying the project into Spring and PHP-based systems. Also developed the newsfeed front-end project, optimized API calls for the integrated search project, and handled Google Analytics and Tag Manager for custom scripts.',
+      "Independently developed and optimized multiple frontend repositories at MUSINSA (13M+ users), South Korea's largest fashion commerce platform. Engineered a unified navigation(GNB, LNG, and FNB) architecture and led performance optimization initiatives for legacy projects.",
     link: { href: 'https://www.musinsa.com', label: 'www.musinsa.com' },
     // TODO: add logo
   },
